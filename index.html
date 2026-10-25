@@ -1,60 +1,65 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>築夢上榜｜建築師考古題學習站</title>
-  <meta name="description" content="建築師考古題分門別類、題型搜尋、練習測驗與錯題複習工具。" />
-  <style>
-    :root{--ink:#17324d;--muted:#6b7c8f;--paper:#f7f4ee;--card:#fffdf9;--line:#e6dfd3;--teal:#197c78;--teal2:#dff3ef;--orange:#e98954;--gold:#f3c969;--red:#b85454;--shadow:0 16px 42px #17324d12}
-    *{box-sizing:border-box} body{margin:0;color:var(--ink);background:var(--paper);font-family:ui-sans-serif,system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.6}
-    button,input,select{font:inherit} button{cursor:pointer;border:0}.shell{max-width:1180px;margin:auto;padding:0 22px}
-    header{background:linear-gradient(135deg,#17324d 0%,#1f5963 56%,#f1a866 150%);color:#fff;overflow:hidden}.nav{height:74px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.04em}.mark{width:38px;height:38px;border-radius:12px;background:#f3c969;color:var(--ink);display:grid;place-items:center;font-size:22px;box-shadow:0 8px 18px #0002}.nav-note{font-size:13px;opacity:.82}.hero{padding:44px 0 68px;display:grid;grid-template-columns:1.25fr .75fr;gap:42px;align-items:center}.eyebrow{color:#f8d98c;letter-spacing:.18em;font-size:12px;font-weight:800}.hero h1{font-size:clamp(34px,6vw,64px);line-height:1.08;margin:15px 0 18px;letter-spacing:-.045em}.hero p{color:#e6f0ef;max-width:640px;font-size:17px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.btn{padding:12px 18px;border-radius:12px;font-weight:800;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--gold);color:var(--ink)}.ghost{background:#ffffff16;color:#fff;border:1px solid #ffffff35}.hero-card{background:#ffffff12;border:1px solid #ffffff2b;padding:22px;border-radius:22px;backdrop-filter:blur(8px)}.hero-card .big{font-size:50px;font-weight:900;line-height:1}.hero-card p{font-size:14px;margin:8px 0 0}.spark{margin-top:22px;display:flex;gap:7px;align-items:end;height:72px}.spark i{display:block;width:12px;background:#f3c969;border-radius:8px 8px 2px 2px}.spark i:nth-child(1){height:24%}.spark i:nth-child(2){height:41%}.spark i:nth-child(3){height:35%}.spark i:nth-child(4){height:58%}.spark i:nth-child(5){height:46%}.spark i:nth-child(6){height:78%}.spark i:nth-child(7){height:100%}
-    main{padding:32px 0 70px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-54px;position:relative}.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:19px;box-shadow:var(--shadow)}.stat b{font-size:28px;display:block}.stat span{font-size:13px;color:var(--muted)}
-    .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:30px 0 18px}.search{flex:1;min-width:230px;position:relative}.search input{width:100%;padding:14px 18px;border:1px solid var(--line);border-radius:13px;background:#fffdf9;outline:none}.search input:focus{border-color:var(--teal);box-shadow:0 0 0 4px var(--teal2)}select{padding:13px 15px;border:1px solid var(--line);border-radius:13px;background:#fffdf9;color:var(--ink)}.tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-bottom:24px}.tab{padding:12px 15px;background:transparent;color:var(--muted);font-weight:800;border-bottom:3px solid transparent}.tab.active{color:var(--teal);border-color:var(--teal)}
-    .section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:26px 0 14px}.section-title h2{margin:0;font-size:25px;letter-spacing:-.03em}.section-title p{margin:0;color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 5px 20px #17324d08}.card h3{margin:8px 0 6px;font-size:19px}.card p{color:var(--muted);font-size:14px;margin:0}.pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:var(--teal2);color:var(--teal);font-size:12px;font-weight:800}.card-foot{display:flex;justify-content:space-between;align-items:center;margin-top:17px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}.link{color:var(--teal);font-weight:800;background:none;padding:0}.empty{padding:34px;text-align:center;color:var(--muted);background:#fffdf9;border:1px dashed var(--line);border-radius:16px}
-    .quiz-wrap{display:grid;grid-template-columns:1fr 280px;gap:18px}.quiz-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:var(--shadow)}.q-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.quiz-card h2{font-size:24px;line-height:1.45;margin:19px 0 20px}.options{display:grid;gap:10px}.option{width:100%;text-align:left;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#fffdf9;color:var(--ink);transition:.18s}.option:hover{border-color:var(--teal);background:#f2fbf8}.option.selected{border-color:var(--teal);background:var(--teal2)}.option.correct{border-color:#4e9a6a;background:#e3f5e8}.option.wrong{border-color:#c56b6b;background:#fae6e3}.explain{margin-top:18px;padding:16px;border-radius:14px;background:#f8f1e3;color:#5b4d38;font-size:14px}.quiz-actions{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.quiz-side{display:flex;flex-direction:column;gap:14px}.side-card{background:#fffdf9;border:1px solid var(--line);border-radius:18px;padding:18px}.side-card h3{margin:0 0 10px}.progress{height:8px;background:#e9e5dd;border-radius:9px;overflow:hidden}.progress i{display:block;height:100%;background:var(--teal);border-radius:9px}.motivate{background:#17324d;color:white}.motivate p{color:#dce8e7;font-size:14px}.mistakes{color:var(--red);font-weight:800}
-    .source{font-size:12px;color:var(--muted);margin-top:20px}.source a{color:var(--teal)}footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:13px}
-    @media(max-width:850px){.hero{grid-template-columns:1fr}.hero-card{max-width:420px}.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.quiz-wrap{grid-template-columns:1fr}}
-    @media(max-width:560px){.shell{padding:0 16px}.nav-note{display:none}.hero{padding-top:28px}.stats{margin-top:-35px;gap:9px}.stat{padding:14px}.stat b{font-size:23px}.grid{grid-template-columns:1fr}.tabs{overflow:auto}.tab{white-space:nowrap}.quiz-card{padding:20px}.quiz-card h2{font-size:20px}}
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>水土之間｜水保群島</title>
+<meta name="description" content="從山林到生活，探索水土保持的雙島互動場景。">
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="world.css">
 </head>
 <body>
-  <header>
-    <div class="shell nav"><div class="brand"><div class="mark">築</div><span>築夢上榜</span></div><div class="nav-note">把每一次練習，都變成上榜的踏腳石</div></div>
-    <div class="shell hero"><div><div class="eyebrow">ARCHITECT EXAM · 110–114</div><h1>今天也為夢想，<br>多答對一題。</h1><p>把建築師考古題依年度、考試類別與科目整理好，快速搜尋、立即測驗，答錯就看解析，讓複習不再從「找題目」開始。</p><div class="hero-actions"><button class="btn primary" onclick="showTab('quiz')">開始今日測驗 →</button><button class="btn ghost" onclick="document.querySelector('#library').scrollIntoView({behavior:'smooth'})">瀏覽題庫</button></div></div><div class="hero-card"><div class="eyebrow">YOUR STUDY RHYTHM</div><div class="big">5 年</div><p>題庫已建立索引，從 110 年一路複習到 114 年。</p><div class="spark" aria-label="學習節奏示意"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
-  </header>
-  <main class="shell">
-    <section class="stats"><div class="stat"><b>5</b><span>涵蓋年度</span></div><div class="stat"><b>3</b><span>考試類別</span></div><div class="stat"><b>17</b><span>常見科目索引</span></div><div class="stat"><b id="quizScore">—</b><span>今日測驗成績</span></div></section>
-    <div class="toolbar" id="library"><div class="search"><input id="search" placeholder="搜尋科目、年度、題型或關鍵字…" oninput="renderLibrary()" /></div><select id="year" onchange="renderLibrary()"><option value="全部年度">全部年度</option><option>110 年</option><option>111 年</option><option>112 年</option><option>113 年</option><option>114 年</option></select><select id="exam" onchange="renderLibrary()"><option value="全部類別">全部類別</option><option>專技高考／建築師</option><option>高考三級／建築工程</option><option>高考三級／公職建築師</option><option>普通考試／建築工程</option></select></div>
-    <div class="tabs"><button class="tab active" data-tab="library" onclick="showTab('library')">題庫總覽</button><button class="tab" data-tab="quiz" onclick="showTab('quiz')">今日測驗</button><button class="tab" data-tab="plan" onclick="showTab('plan')">複習節奏</button></div>
-    <section id="libraryTab"><div class="section-title"><div><h2>題庫索引</h2><p>先選科目，再用原始試題做深度複習。</p></div><span class="pill" id="resultCount"></span></div><div class="grid" id="libraryGrid"></div><p class="source">本機資料夾：C:\\Users\\Administrator\\Desktop\\11510255專案\\2026-10-25\\建築師考古題。答案鍵優先採考選部公布資料，並以題庫網站交叉檢查：<a href="https://wwwq.moex.gov.tw/exam/wHandExamQandA_File.ashx?c=801&code=114180&q=1&s=0102&t=M" target="_blank">考選部標準答案</a>、<a href="https://architectroad.com/past-papers/structure/" target="_blank">建築師之路</a>、<a href="https://exam.insideout.com.tw/exam" target="_blank">建築師考試通</a>。</p></section>
-    <section id="quizTab" hidden><div class="section-title"><div><h2>今日測驗</h2><p>先作答，再看正確答案與複習提示；答錯不代表退步，只代表這個觀念值得再遇見一次。</p></div></div><div class="quiz-wrap"><div class="quiz-card" id="quizCard"></div><aside class="quiz-side"><div class="side-card"><h3>本回進度</h3><div class="progress"><i id="progressBar" style="width:0%"></i></div><p id="progressText" class="source">第 1 / 8 題</p></div><div class="side-card motivate"><h3>給今天的你</h3><p id="encourage">穩穩答，會的題目先拿下；不會的題目，正是下一個得分點。</p></div><div class="side-card"><h3>答題紀錄</h3><p id="mistakeText" class="source">還沒有錯題，保持這個節奏！</p></div></aside></div></section>
-    <section id="planTab" hidden><div class="section-title"><div><h2>複習節奏</h2><p>把大目標拆成今天做得到的三步。</p></div></div><div class="grid"><div class="card"><span class="pill">STEP 01 · 10 分鐘</span><h3>暖身：快速掃描</h3><p>先用年度與科目篩選，挑一份最熟悉的測驗題，建立進入狀態的節奏。</p></div><div class="card"><span class="pill">STEP 02 · 25 分鐘</span><h3>主攻：計時作答</h3><p>今天測驗每題先獨立思考；不查資料，留下真正需要補強的盲點。</p></div><div class="card"><span class="pill">STEP 03 · 15 分鐘</span><h3>收尾：錯題回看</h3><p>把答錯題目記成一句自己的話。隔天再回想一次，比只看答案更容易留下來。</p></div></div><div class="card" style="margin-top:16px"><h3>小提醒</h3><p>法規、標準與答案可能隨年度修正；本網站的整理是讀書輔助，正式應試請以考選部最新公告與當年度法規為準。</p></div></section>
-  </main>
-  <footer><div class="shell">築夢上榜｜建築師考古題學習站　·　願你把今天的努力，蓋成明天的名字。</div></footer>
-  <script>
-    const library=[
-      ['114 年','專技高考／建築師','建築結構','測驗題 100 題；含本機官方答案檔','結構分析、耐震、材料','答案已建立索引'],['114 年','專技高考／建築師','建築構造與施工','測驗題 80 題；含本機官方答案檔','材料、施工、構法','答案已建立索引'],['114 年','專技高考／建築師','建築環境控制','測驗題 40 題；含本機官方答案檔','環境、設備、熱工','答案已建立索引'],['114 年','專技高考／建築師','營建法規與實務','測驗題 40 題；含本機官方答案檔','法規、實務、程序','答案已建立索引'],['114 年','專技高考／建築師','建築計畫與設計','申論／設計題；保留原始 PDF','空間、機能、設計表達','以原始題本複習'],['114 年','專技高考／建築師','敷地計畫與都市設計','申論／設計題；保留原始 PDF','都市、敷地、環境','以原始題本複習'],['113 年','專技高考／建築師','四科測驗題','各科題本與答案均已收錄','歷屆題型、錯題複習','答案已建立索引'],['112 年','專技高考／建築師','四科測驗題','各科題本與答案均已收錄','歷屆題型、錯題複習','答案已建立索引'],['111 年','專技高考／建築師','四科測驗題','各科題本與答案均已收錄','歷屆題型、錯題複習','答案已建立索引'],['110 年','專技高考／建築師','四科測驗題','各科題本與答案均已收錄','歷屆題型、錯題複習','答案已建立索引'],['114 年','高考三級／建築工程','建築設計、結構、營造估價、環控、法規','本機題本索引','綜合題型','以原始題本複習'],['114 年','普通考試／建築工程','建築圖學、施工估價、營建法規','本機題本索引','基礎科目','以原始題本複習']
-    ];
-    const questions=[
-      {tag:'建築環境控制',q:'在被動式設計中，遮陽構件最直接的主要目的為何？',o:['增加室內照明的眩光','降低太陽輻射進入室內的熱量','提高結構耐震韌性','增加空調設備容量'],a:1,e:'遮陽的核心作用是控制直射日射，降低冷房負荷；自然採光與通風則是相關但不同的設計策略。'},
-      {tag:'建築構造與施工',q:'一般而言，混凝土養護的主要目的為何？',o:['讓混凝土快速失水','維持水化所需的濕度與溫度','使鋼筋立即產生降伏','降低骨材粒徑'],a:1,e:'適當養護能讓水泥持續水化，幫助強度發展並降低收縮裂縫風險。'},
-      {tag:'建築結構',q:'簡支梁在跨中央承受集中載重時，彎矩圖的最大值通常出現在何處？',o:['左支承處','右支承處','跨中央附近','梁端外側'],a:2,e:'對稱簡支梁受跨中央集中載重時，剪力在載重點改變符號，因此最大正彎矩出現在跨中央。'},
-      {tag:'營建法規與實務',q:'閱讀法規題時，若題目指定「當年度」法規，最優先的查證對象應是？',o:['多年以前的補習班講義','考選部與主管機關最新公告','網路留言的單一說法','未標日期的摘要圖卡'],a:1,e:'法規可能修正，應以考選部、全國法規資料庫及主管機關最新公告交叉確認。'},
-      {tag:'建築計畫',q:'建築計畫中的「動線分析」最主要是在檢核什麼？',o:['立面顏色是否一致','人、車、服務流線是否合理且避免衝突','結構材料單價','基地地質鑽探深度'],a:1,e:'動線分析著重使用者、車行、服務與避難等流線的關係、效率與安全。'},
-      {tag:'都市設計',q:'基地配置中保留連續開放空間，常可帶來哪一項都市環境效益？',o:['阻斷所有步行路徑','增加公共性與步行連結','使建築量體無法採光','消除所有交通需求'],a:1,e:'連續的開放空間可串聯公共節點、提升步行可達性，也有助於環境品質。'},
-      {tag:'建築結構',q:'鋼材的疲勞破壞主要與下列何者有關？',o:['反覆應力循環','單次極短時間的靜載重','室內照度','牆面塗料顏色'],a:0,e:'疲勞破壞與反覆載重造成的應力循環相關，即使應力未達靜態降伏強度，也可能累積損傷。'},
-      {tag:'建築環境控制',q:'交叉通風要能有效運作，最需要具備的條件之一是？',o:['只有單一密閉開口','進風與出風路徑','所有窗戶都朝同一方向且封閉','室內完全沒有壓力差'],a:1,e:'交叉通風需要可形成流動路徑的進、出風開口，以及適當的風壓或熱壓差。'}
-    ];
-    let qi=0,answers=[],mistakes=0;
-    function showTab(tab){document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x.dataset.tab===tab));document.querySelectorAll('main section[id$="Tab"]').forEach(x=>x.hidden=true);document.getElementById(tab+'Tab').hidden=false;if(tab==='quiz')renderQuiz();if(tab==='library')renderLibrary()}
-    function renderLibrary(){const q=(document.getElementById('search').value||'').toLowerCase(),y=document.getElementById('year').value,e=document.getElementById('exam').value;const rows=library.filter(r=>(y==='全部年度'||r[0]===y)&&(e==='全部類別'||r[1]===e)&&r.join(' ').toLowerCase().includes(q));document.getElementById('resultCount').textContent=rows.length+' 筆索引';document.getElementById('libraryGrid').innerHTML=rows.map(r=>`<article class="card"><span class="pill">${r[0]} · ${r[1]}</span><h3>${r[2]}</h3><p>${r[3]}</p><div class="card-foot"><span>${r[4]}</span><button class="link" onclick="showTab('quiz')">練習相關觀念 →</button></div></article>`).join('')||'<div class="empty">找不到符合條件的題庫，換個關鍵字試試。</div>'}
-    function renderQuiz(){const x=questions[qi];document.getElementById('progressBar').style.width=((qi)/questions.length*100)+'%';document.getElementById('progressText').textContent=`第 ${qi+1} / ${questions.length} 題`;document.getElementById('quizCard').innerHTML=`<div class="q-meta"><span class="pill">${x.tag}</span><span>${answers[qi]===undefined?'尚未作答':answers[qi]===x.a?'答對了':'已檢討'}</span></div><h2>${x.q}</h2><div class="options">${x.o.map((v,i)=>`<button class="option ${answers[qi]!==undefined?(i===x.a?'correct':i===answers[qi]?'wrong':''):''}" ${answers[qi]!==undefined?'disabled':''} onclick="answer(${i})"><b>${String.fromCharCode(65+i)}</b>　${v}</button>`).join('')}</div>${answers[qi]!==undefined?`<div class="explain"><b>${answers[qi]===x.a?'✓ 答對了，繼續保持！':'○ 再想一次也沒關係'}</b><br>正確答案：${String.fromCharCode(65+x.a)}. ${x.o[x.a]}<br>${x.e}</div>`:''}<div class="quiz-actions"><button class="btn ghost" style="background:#eef3f2;color:var(--teal)" onclick="prevQ()" ${qi===0?'disabled':''}>← 上一題</button><button class="btn primary" onclick="nextQ()">${qi===questions.length-1?'完成測驗':'下一題 →'}</button></div>`}
-    function answer(i){if(answers[qi]!==undefined)return;answers[qi]=i;if(i!==questions[qi].a){mistakes++;document.getElementById('mistakeText').textContent=`目前有 ${mistakes} 題值得回看：錯題就是最精準的讀書地圖。`;document.getElementById('encourage').textContent='這題錯了，但你已經把盲點找出來；訂正一次，就向上榜靠近一步。'}else{document.getElementById('encourage').textContent='漂亮！把這個觀念帶走，下一題繼續穩穩答。'}renderQuiz()}
-    function nextQ(){if(qi<questions.length-1){qi++;renderQuiz()}else{const score=answers.reduce((s,a,i)=>s+(a===questions[i].a?1:0),0);document.getElementById('quizScore').textContent=score+'/'+questions.length;document.getElementById('encourage').textContent=`本回完成：${score} / ${questions.length}。不論分數，完成就是今天的進度。`;alert(`測驗完成！${score} / ${questions.length}\n記得回看錯題，明天會更穩。`)}}
-    function prevQ(){if(qi>0){qi--;renderQuiz()}}
-    renderLibrary();renderQuiz();
-  </script>
-</body>
-</html>
+<header><a class="brand" href="#"><span class="brand-icon">≈</span>水土之間<span class="edition">WATER & LAND</span></a><a class="nav-link" href="#cinema">水保放映室 ↗</a></header>
+<main>
+<section class="world" aria-labelledby="title">
+ <div class="intro"><span class="eyebrow">一滴水，連起兩座島</span><h1 id="title">讓山林留住水，<br>讓生活更美好。</h1><p>從山上的一棵樹，到家門前的一條溪。<br>點亮島上的故事，認識水土保持。</p></div>
+ <div class="scene-wrap"><svg id="scene" viewBox="0 0 1200 670" role="img" aria-labelledby="scene-title scene-desc"><title id="scene-title">山林與生活的雙島場景</title><desc id="scene-desc">左側山林島與右側生活島以水流串連。可用下方主題按鈕探索植被、溪流、透水地面與雨水利用。</desc>
+ <defs>
+ <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#eff6ef"/><stop offset="1" stop-color="#b7dcd8"/></linearGradient>
+ <linearGradient id="earth" x2="0" y2="1"><stop stop-color="#d7b88a"/><stop offset="1" stop-color="#a88664"/></linearGradient>
+ <linearGradient id="grass" x2="1" y2="1"><stop stop-color="#a7c67b"/><stop offset="1" stop-color="#6e9d68"/></linearGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="13"/></filter>
+ <g id="tree"><path d="M0 4v-66" stroke="#806e49" stroke-width="9"/><path d="M-38-49-24-92 9-110 40-79 34-42-2-27Z" fill="#7d9c50"/><path d="M-38-49-24-92 9-110 7-65Z" fill="#a6bb67"/><path d="M7-65 9-110 40-79 34-42Z" fill="#63864b"/></g>
+ <g id="pine"><path d="M0 0v-82" stroke="#77694c" stroke-width="8"/><path d="M0-139-37-64H-23L-46-30H42L24-65H35Z" fill="#3f7960"/><path d="M0-139-37-64H-23L-46-30H0Z" fill="#60976c"/></g>
+ <g id="house"><path d="M-34-40 0-58 37-38V7L0 28-34 8Z" fill="#f1ead8"/><path d="M0-58 37-38V7L0 28Z" fill="#d9cfac"/><path d="M-44-43-9-89 43-61 46-32 0-54Z" fill="#c47d58"/><path d="M-44-43-9-89 0-54Z" fill="#e6a178"/><path d="M-21-25-8-19V0L-21-6Z M12-29 27-37V-16L12-8Z" fill="#6e9492"/><path d="M7 9 19 2V18L7 25Z" fill="#816b51"/></g>
+ <g id="person"><ellipse cy="3" rx="12" ry="5" fill="#426e6033"/><path d="M-4-10-5 3M4-10 5 3" stroke="#405d5b" stroke-width="5"/><path d="M0-27v19" stroke="#f3b254" stroke-width="15" stroke-linecap="round"/><circle cy="-36" r="9" fill="#dcb390"/><path d="M-9-37Q-10-50 2-47Q12-44 9-34" fill="#3d5147"/></g>
+ </defs>
+ <rect width="1200" height="670" fill="url(#sea)"/>
+ <g class="ripples" fill="none" stroke="#ffffff" opacity=".45"><ellipse cx="362" cy="450" rx="316" ry="145"/><ellipse cx="914" cy="470" rx="245" ry="121"/><path d="M110 595q90-25 180 0m470 23q140-25 280 0M750 210q70-20 160 0"/></g>
+ <ellipse cx="350" cy="498" rx="250" ry="80" fill="#486f622b" filter="url(#shadow)"/><ellipse cx="909" cy="525" rx="218" ry="72" fill="#486f622b" filter="url(#shadow)"/>
+ <path class="flow" d="M522 445C640 582 733 396 823 449" fill="none" stroke="#6aaeb0" stroke-width="25" opacity=".6"/>
+ <path class="flow-dash" d="M522 445C640 582 733 396 823 449" fill="none" stroke="#e9fffa" stroke-width="3" stroke-dasharray="6 20"/>
+ <g class="island mountain">
+ <path d="M85 378Q109 281 328 269Q533 253 625 370L625 416Q552 527 330 538Q125 508 85 424Z" fill="url(#earth)"/>
+ <path d="M85 378Q109 281 328 269Q533 253 625 370Q560 492 331 497Q125 466 85 378Z" fill="#d8d6a5"/>
+ <path d="M108 374Q174 281 331 288Q515 274 597 370Q529 463 332 476Q178 450 108 374Z" fill="url(#grass)"/>
+ <path d="M212 345 342 133 471 342 366 394Z" fill="#789479"/><path d="M342 133 330 324 366 394 212 345Z" fill="#91ab83"/><path d="M342 133 471 342 388 296Z" fill="#5d7d6b"/><path d="M307 191 342 133 379 193 351 183 333 203Z" fill="#ccd2ae"/>
+ <path class="river" d="M380 304Q329 333 391 362T424 408Q424 435 534 457" fill="none" stroke="#9ad7cf" stroke-width="25"/>
+ <path d="M380 304Q329 333 391 362T424 408Q424 435 534 457" fill="none" stroke="#daeee0" stroke-width="4"/>
+ <use href="#pine" x="219" y="328"/><use href="#pine" x="175" y="369" transform="translate(35 74) scale(.8)"/><use href="#tree" x="280" y="388"/><use href="#tree" x="181" y="421"/><use href="#pine" x="487" y="361"/><use href="#tree" x="531" y="410"/>
+ <path d="m281 430 65-31 34 18-65 32Z" fill="#b1c684"/><path d="m294 432 55-26m-42 32 55-27" stroke="#7f9e62" stroke-width="5"/>
+ <use class="walker" href="#person" x="320" y="448"/><use href="#person" x="452" y="390"/>
+ </g>
+ <g class="island village">
+ <path d="M680 411Q716 318 897 312Q1083 309 1145 411V448Q1080 548 900 552Q738 546 680 453Z" fill="url(#earth)"/>
+ <path d="M680 411Q716 318 897 312Q1083 309 1145 411Q1087 514 900 516Q742 506 680 411Z" fill="#e1d8ad"/>
+ <path d="M704 409Q745 332 897 331Q1061 330 1119 412Q1061 491 900 495Q763 486 704 409Z" fill="#a4bd80"/>
+ <path d="m745 425 149-77 162 87-128 65Z" fill="#ddd7b8"/><path d="m786 430 115-60 111 60-94 49Z" fill="none" stroke="#b5b8a1" stroke-dasharray="3 7" stroke-width="16"/>
+ <use href="#house" x="852" y="387"/><use href="#house" x="967" y="408"/>
+ <use href="#tree" x="741" y="414"/><use href="#tree" x="1054" y="387"/><use href="#tree" x="1030" y="471"/>
+ <path d="m769 466 49-25 44 22-48 25Z" fill="#719b70"/><path d="m781 465 31-15m-20 22 31-15m-20 22 31-15" stroke="#b8ce86" stroke-width="5"/>
+ <g fill="#7bada5"><ellipse cx="1008" cy="411" rx="15" ry="8"/><path d="M993 411v26q15 13 30 0v-26Z"/><ellipse cx="1008" cy="411" rx="15" ry="8" fill="#acd5c6"/></g>
+ <use class="walker" href="#person" x="892" y="453"/><use href="#person" x="816" y="410"/>
+ </g>
+ <g id="rain" aria-hidden="true"></g>
+ <g class="labels"><g transform="translate(200 510)"><rect width="156" height="39" rx="19"/><text x="78" y="25">01 · 山林保水島</text></g><g transform="translate(855 549)"><rect width="156" height="39" rx="19"/><text x="78" y="25">02 · 生活親水島</text></g></g>
+ </svg>
+ <div class="hotspots" aria-label="島嶼探索點"><button class="hotspot forest" data-topic="0" aria-label="探索植被與土壤">＋<span>植被與土壤</span></button><button class="hotspot stream" data-topic="1" aria-label="探索溪流與坡地">＋<span>溪流與坡地</span></button><button class="hotspot ground" data-topic="2" aria-label="探索透水生活">＋<span>透水生活</span></button><button class="hotspot water" data-topic="3" aria-label="探索雨水利用">＋<span>雨水利用</span></button></div>
+ </div>
+ <div class="scene-controls"><span><i></i>雙島探索 · 示意場景</span><div><button id="weather" aria-pressed="false">☂ 看看下雨時</button><button id="motion" aria-pressed="false">Ⅱ 暫停動畫</button></div></div>
+</section>
+<section class="explore" aria-label="水保主題"><div class="section-label"><span class="eyebrow">EXPLORE THE CONNECTION</span><h2>山與城，彼此照顧。</h2><p>選一個主題，沿著水流探索。</p></div><div class="story"><div class="tabs" role="group" aria-label="選擇主題"><button data-topic="0" aria-pressed="true">01 植被</button><button data-topic="1" aria-pressed="false">02 溪流</button><button data-topic="2" aria-pressed="false">03 透水</button><button data-topic="3" aria-pressed="false">04 雨水</button></div><div id="story-content" aria-live="polite"></div><a href="#cinema" class="text-link">走進水保放映室 ↗</a></div></section>
+<section id="cinema" class="cinema"><div class="cinema-copy"><span class="eyebrow">THE ISLAND CINEMA</span><h2>把水保故事，<br>帶進生活裡。</h2><p>在兩座島之間，留一段時間，<br>一起看見土地與水的關係。</p><span class="status" id="film-status">【水土保持小知識】老鼠與飯糰篇</span><p class="video-credit">影片出處：農業部農村發展及水土保持署 臺中分署<br><a href="https://learning.ardswc.gov.tw/pages/Advanced_Filter_Video.html?bookId=GA2023102318561401" target="_blank" rel="noopener">水保酷學堂原片 ↗</a> · <a href="https://learning.ardswc.gov.tw/pages/Announcement.html" target="_blank" rel="noopener">資料開放宣告</a></p></div><div class="screen"><div id="player"><div class="placeholder"><span class="play-symbol">▷</span><h3>水保放映室</h3><p>老鼠與飯糰篇：認識山邊溝與水土保持。</p><small>請啟用 JavaScript，或開啟影片原始檔。</small></div></div></div></section>
+<footer><div><b>水土之間</b><p>從一滴水開始，重新認識我們的土地。</p></div><p class="credits">水保群島 · 場景重新繪製<br>視覺與互動參考：<a href="https://puma.taipei/heart-island" target="_blank" rel="noopener">HEART 政策島</a> ／ <a href="https://www.threads.com/@daniel_yuhaichen/post/De0YYDqk7dZ/media" target="_blank" rel="noopener">Threads 島嶼動畫</a><br>本頁為水保主題示意，非原作或相關機關官方作品。</p></footer>
+</main><script src="config.js"></script><script src="world.js"></script><script src="app.js"></script>
+</body></html>
+
+
